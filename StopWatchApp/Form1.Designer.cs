@@ -33,16 +33,9 @@
             this.startStopButton = new System.Windows.Forms.Button();
             this.hundredsLabel = new System.Windows.Forms.Label();
             this.secondsLabel = new System.Windows.Forms.Label();
-            this.countTimer = new System.Windows.Forms.Timer(this.components);
+            this.watchTimer = new System.Windows.Forms.Timer(this.components);
             this.minutesLabel = new System.Windows.Forms.Label();
-            this.closeButton = new System.Windows.Forms.Button();
-            this.learningBox = new System.Windows.Forms.GroupBox();
-            this.colourLabel = new System.Windows.Forms.Label();
-            this.counterLabel = new System.Windows.Forms.Label();
-            this.debugLabel2 = new System.Windows.Forms.Label();
-            this.debugLabel1 = new System.Windows.Forms.Label();
             this.titleLabel = new System.Windows.Forms.Label();
-            this.learningBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // resetButton
@@ -101,10 +94,10 @@
             this.secondsLabel.Text = ":00";
             this.secondsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // countTimer
+            // watchTimer
             // 
-            this.countTimer.Interval = 10;
-            this.countTimer.Tick += new System.EventHandler(this.countTimer_Tick);
+            this.watchTimer.Interval = 10;
+            this.watchTimer.Tick += new System.EventHandler(this.watchTimer_Tick);
             // 
             // minutesLabel
             // 
@@ -118,93 +111,25 @@
             this.minutesLabel.Text = "00";
             this.minutesLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // closeButton
-            // 
-            this.closeButton.BackColor = System.Drawing.Color.Black;
-            this.closeButton.FlatAppearance.BorderSize = 0;
-            this.closeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.closeButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.closeButton.ForeColor = System.Drawing.Color.White;
-            this.closeButton.Location = new System.Drawing.Point(439, 0);
-            this.closeButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.closeButton.Name = "closeButton";
-            this.closeButton.Size = new System.Drawing.Size(36, 41);
-            this.closeButton.TabIndex = 9;
-            this.closeButton.Text = "X";
-            this.closeButton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.closeButton.UseVisualStyleBackColor = false;
-            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
-            // 
-            // learningBox
-            // 
-            this.learningBox.Controls.Add(this.colourLabel);
-            this.learningBox.Controls.Add(this.counterLabel);
-            this.learningBox.Controls.Add(this.debugLabel2);
-            this.learningBox.Controls.Add(this.debugLabel1);
-            this.learningBox.ForeColor = System.Drawing.Color.White;
-            this.learningBox.Location = new System.Drawing.Point(285, 51);
-            this.learningBox.Name = "learningBox";
-            this.learningBox.Size = new System.Drawing.Size(190, 176);
-            this.learningBox.TabIndex = 11;
-            this.learningBox.TabStop = false;
-            this.learningBox.Text = "Learning Area";
-            // 
-            // colourLabel
-            // 
-            this.colourLabel.BackColor = System.Drawing.Color.Black;
-            this.colourLabel.Location = new System.Drawing.Point(120, 106);
-            this.colourLabel.Name = "colourLabel";
-            this.colourLabel.Size = new System.Drawing.Size(33, 23);
-            this.colourLabel.TabIndex = 3;
-            // 
-            // counterLabel
-            // 
-            this.counterLabel.AutoSize = true;
-            this.counterLabel.Location = new System.Drawing.Point(117, 57);
-            this.counterLabel.Name = "counterLabel";
-            this.counterLabel.Size = new System.Drawing.Size(16, 17);
-            this.counterLabel.TabIndex = 2;
-            this.counterLabel.Text = "0";
-            // 
-            // debugLabel2
-            // 
-            this.debugLabel2.AutoSize = true;
-            this.debugLabel2.Location = new System.Drawing.Point(31, 106);
-            this.debugLabel2.Name = "debugLabel2";
-            this.debugLabel2.Size = new System.Drawing.Size(51, 17);
-            this.debugLabel2.TabIndex = 1;
-            this.debugLabel2.Text = "colour:";
-            // 
-            // debugLabel1
-            // 
-            this.debugLabel1.AutoSize = true;
-            this.debugLabel1.Location = new System.Drawing.Point(31, 57);
-            this.debugLabel1.Name = "debugLabel1";
-            this.debugLabel1.Size = new System.Drawing.Size(51, 17);
-            this.debugLabel1.TabIndex = 0;
-            this.debugLabel1.Text = "count: ";
-            // 
             // titleLabel
             // 
-            this.titleLabel.BackColor = System.Drawing.Color.Black;
+            this.titleLabel.BackColor = System.Drawing.Color.DarkGoldenrod;
             this.titleLabel.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.titleLabel.ForeColor = System.Drawing.Color.White;
             this.titleLabel.Location = new System.Drawing.Point(-1, 0);
             this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(560, 44);
+            this.titleLabel.Size = new System.Drawing.Size(265, 44);
             this.titleLabel.TabIndex = 12;
-            this.titleLabel.Text = "Amazing RAMS Timer";
-            this.titleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.titleLabel.Text = "Stopwatch";
+            this.titleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DarkRed;
-            this.ClientSize = new System.Drawing.Size(488, 239);
-            this.Controls.Add(this.closeButton);
+            this.BackColor = System.Drawing.Color.Black;
+            this.ClientSize = new System.Drawing.Size(262, 239);
             this.Controls.Add(this.titleLabel);
-            this.Controls.Add(this.learningBox);
             this.Controls.Add(this.minutesLabel);
             this.Controls.Add(this.resetButton);
             this.Controls.Add(this.startStopButton);
@@ -215,8 +140,6 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Stop Watch";
-            this.learningBox.ResumeLayout(false);
-            this.learningBox.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -227,15 +150,9 @@
         private System.Windows.Forms.Button startStopButton;
         private System.Windows.Forms.Label hundredsLabel;
         private System.Windows.Forms.Label secondsLabel;
-        private System.Windows.Forms.Timer countTimer;
+        private System.Windows.Forms.Timer watchTimer;
         private System.Windows.Forms.Label minutesLabel;
-        private System.Windows.Forms.Button closeButton;
-        private System.Windows.Forms.GroupBox learningBox;
         private System.Windows.Forms.Label titleLabel;
-        private System.Windows.Forms.Label colourLabel;
-        private System.Windows.Forms.Label counterLabel;
-        private System.Windows.Forms.Label debugLabel2;
-        private System.Windows.Forms.Label debugLabel1;
     }
 }
 
